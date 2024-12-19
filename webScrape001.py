@@ -16,7 +16,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 # にいがたLiveカメラサイト https://www.live-cam.pref.niigata.jp/text/select.php?area=3&class=1
 # などから写真を読み込み、一覧表示します
-# 対象の写真はリストファイルに「リンク文字列,画像ファイル名」の形式で指定します
+# 対象の写真はconfig.iniに「リンク文字列,画像ファイル名」の形式で指定します
 # [NIIGATA_LIVE_CAMERA]
 # url = https://www.live-cam.pref.niigata.jp/text/select.php?area=3&class=1
 # xpath = /html/body/div/div[3]/div/div[3]/img
