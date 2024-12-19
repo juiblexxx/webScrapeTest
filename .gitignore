@@ -1,0 +1,13 @@
+Backup/*
+画像/*
+chromedriver/*
+__pycache__/*
+*.pdf
+*.csv
+*.png
+*.txt
+*.xlsx
+config.ini
+web_scraping_sample01.py
+web_scraping_sample02.py
+webScrape002.py
