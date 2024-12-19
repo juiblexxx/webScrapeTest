@@ -30,7 +30,6 @@ from selenium.webdriver.support import expected_conditions as EC
 # # 設定データの数
 # data = 6
 
-
 # 指定したURLとXPATHから画像をダウンロードしてくれる関数
 def download_image(driver, wait, base_url: str, link_text: str, image_xpath: str):
     # リンク文字列のクリック
@@ -73,8 +72,6 @@ def send_image_to_line_notify(url: str, token: str, notify_message: str, image_p
 
     payload = {"message" :  notify_message}
     files = {"imageFile": image}
-    # response = requests.post(url, headers = headers, params=payload, files=files)
-    # return response.status_code
 
 
 
@@ -101,9 +98,6 @@ line_token = config_ini['LINE']['token']
 option = webdriver.ChromeOptions()
 option.add_argument("--headless --incognito")
 driver = webdriver.Chrome(options = option)
-
-# 引数Optionなしでやるなら↓でOK
-# driver = webdriver.Chrome()
 
 # Explicit waitを30秒で追加
 # elementsなどの要素が全て出そろうまで待ってくれる
@@ -180,15 +174,9 @@ for data_number in range(number_of_data):
     # time_image_name = f"{current_time}_{image_name}.png"
     # save_image(image_data, output_path, time_image_name)
 
-    # LINEに送信
-    # send_image_to_line_notify(line_url, line_token, f"{link_text}:{current_time}", os.path.join(output_path, time_image_name))
-
-
 
 # GoogleMapからのデータ取得
 
-# 画面は最大化
-# driver.maximize_window()
 # 画面サイズ変更
 w = config_ini['GOOGLE_MAP']['window_size_w']
 h = config_ini['GOOGLE_MAP']['window_size_h']
@@ -224,10 +212,6 @@ for data_number in range(number_of_data):
 
     # スクショ撮影
     driver.save_screenshot(os.path.join(output_path, f"{current_time}_{image_name}.png"))
-
-    # LINEに送信(LINE Notifyがサビ終したので終わり)
-    # send_image_to_line_notify(line_url, line_token, f"{town_name}:{current_time}", os.path.join(output_path, f"{current_time}_{image_name}.png"))
-
 
 
 # chrome閉じる
